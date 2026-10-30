@@ -7,15 +7,16 @@
   <title>Kanak Dwivedi | Digital Marketing Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
   <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
-    <nav class="nav container" aria-label="Primary">
-      <a class="logo" href="#top">Kanak<span>.</span></a>
+    <nav class="nav nav-shell container" aria-label="Primary">
+      <a class="logo" href="#top"><span class="logo-mark">K</span> Kanak</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -38,9 +39,10 @@
         <span class="orb orb-2"></span>
         <span class="orb orb-3"></span>
       </div>
-      <div class="container hero-grid">
+      <div class="container hero-layout">
+        <div class="hero-top">
         <div class="hero-copy hero-stagger">
-          <p class="eyebrow hero-item" style="--i: 0">Digital Marketing · Social Media · Influencer Marketing</p>
+          <p class="eyebrow chip hero-item" style="--i: 0">Digital Marketing · Social Media · Influencer Marketing</p>
           <h1 class="hero-item hero-title" style="--i: 1">Kanak <span class="title-accent">Dwivedi</span></h1>
           <p class="hero-lead hero-item" style="--i: 2">
             I grow brands through organic social strategy, creator partnerships, and data-driven campaigns—turning content into community and community into measurable results.
@@ -49,7 +51,18 @@
             <a href="#contact" class="btn btn-primary btn-shine">Let's connect</a>
             <a href="KANAK_DM.pdf" class="btn btn-ghost" download>Download resume</a>
           </div>
-          <dl class="hero-stats hero-item" style="--i: 4">
+        </div>
+        <figure class="hero-visual hero-visual-enter" id="hero-tilt-wrap">
+          <div class="hero-frame hero-tilt" id="hero-tilt">
+            <img src="assets/images/hero.jpg" alt="Kanak Dwivedi — professional portrait" width="640" height="800" />
+          </div>
+          <figcaption class="hero-badge">
+            <span class="badge-dot"></span>
+            Open to opportunities
+          </figcaption>
+        </figure>
+        </div>
+        <dl class="hero-stats hero-stats-bento">
             <div class="stat-card">
               <dt data-count="40000" data-suffix="+">0</dt>
               <dd>Instagram followers grown organically</dd>
@@ -63,12 +76,6 @@
               <dd>Years in social &amp; digital marketing</dd>
             </div>
           </dl>
-        </div>
-        <figure class="hero-visual hero-visual-enter">
-          <div class="hero-frame">
-            <img src="assets/images/hero.jpg" alt="Kanak Dwivedi — professional portrait" width="640" height="800" />
-          </div>
-        </figure>
       </div>
       <a href="#about" class="scroll-hint" aria-label="Scroll to about">
         <span>Scroll</span>
@@ -76,9 +83,9 @@
       </a>
     </section>
 
-    <section id="about" class="section about">
+    <section id="about" class="section about section-card">
       <div class="container about-grid">
-        <div class="about-media reveal reveal-left parallax-wrap">
+        <div class="about-media">
           <img src="assets/images/about.jpg" alt="Kanak Dwivedi outdoors with city skyline" loading="lazy" />
           <img src="assets/images/portrait-formal.jpg" alt="Kanak Dwivedi formal portrait" class="about-float" loading="lazy" />
         </div>
@@ -92,11 +99,11 @@
             At Hypeon, I grew a brand page from 1,800 to 40,000+ followers through a fully organic strategy, lifting organic's share of marketing results from 3% to 67%. I'm skilled in Adobe Creative Suite, Canva, CapCut, and analytics tools—with a data-driven approach to every post, partnership, and campaign.
           </p>
           <ul class="about-meta">
-            <li>
+            <li class="meta-item">
               <span>Location</span>
-              Agra, Uttar Pradesh, India
+              Noida, Uttar Pradesh, India
             </li>
-            <li>
+            <li class="meta-item">
               <span>Education</span>
               B.Tech CSE — GL Bajaj (2022–2026)
             </li>
@@ -259,23 +266,23 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact contact-banner">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <p class="section-label">Get in touch</p>
           <h2>Let's build something that moves the needle</h2>
           <p>Open to roles and collaborations in social media, influencer marketing, and digital brand growth.</p>
         </div>
-        <div class="contact-cards reveal" style="--delay: 0.1s">
-          <a href="mailto:kanakdwivedi343@gmail.com" class="contact-link">
+        <div class="contact-cards reveal contact-stagger" style="--delay: 0.1s">
+          <a href="mailto:kanakdwivedi343@gmail.com" class="contact-link contact-item">
             <span class="contact-label">Email</span>
             kanakdwivedi343@gmail.com
           </a>
-          <a href="tel:+918532833212" class="contact-link">
+          <a href="tel:+918532833212" class="contact-link contact-item">
             <span class="contact-label">Phone</span>
             +91 85328 33212
           </a>
-          <a href="https://linkedin.com/in/kanak-dwivedi" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/kanak-dwivedi" class="contact-link contact-item" target="_blank" rel="noopener noreferrer">
             <span class="contact-label">LinkedIn</span>
             linkedin.com/in/kanak-dwivedi
           </a>
@@ -284,7 +291,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer reveal">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Kanak Dwivedi. Crafted with care.</p>
       <a href="#top">Back to top</a>

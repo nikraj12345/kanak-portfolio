@@ -43,6 +43,12 @@
 
   observeReveal(document.querySelectorAll(".reveal"));
 
+  document.querySelectorAll(".skill-card").forEach((card) => {
+    card.querySelectorAll("li").forEach((li, i) => {
+      li.style.setProperty("--tag-i", String(i));
+    });
+  });
+
   const timeline = document.querySelector(".timeline-animate");
   if (timeline) {
     const timelineObserver = new IntersectionObserver(
@@ -105,6 +111,35 @@
   window.addEventListener("scroll", updateHeader, { passive: true });
   updateHeader();
 
+  /* Scroll progress bar */
+  const progressBar = document.getElementById("scroll-progress-bar");
+  function updateScrollProgress() {
+    if (!progressBar) return;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progressBar.style.width = pct + "%";
+  }
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  /* Hero 3D tilt */
+  if (!prefersReducedMotion) {
+    const heroTilt = document.getElementById("hero-tilt");
+    const heroWrap = document.getElementById("hero-tilt-wrap");
+    if (heroTilt && heroWrap) {
+      heroWrap.addEventListener("mousemove", (e) => {
+        const rect = heroWrap.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroTilt.style.transform = `rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+      });
+      heroWrap.addEventListener("mouseleave", () => {
+        heroTilt.style.transform = "";
+      });
+    }
+  }
+
   /* Animated counters */
   function animateCount(el) {
     const target = parseInt(el.dataset.count, 10);
@@ -124,6 +159,7 @@
           target >= 1000
             ? target.toLocaleString("en-IN") + suffix
             : target + suffix;
+        el.classList.add("count-done");
       }
     }
     requestAnimationFrame(tick);
@@ -257,7 +293,7 @@
     });
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      link.style.color = href === `#${current}` ? "var(--text)" : "";
+      link.classList.toggle("nav-active", href === `#${current}`);
     });
   }
 
